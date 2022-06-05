@@ -1,0 +1,44 @@
+﻿@model IEnumerable<StudentEnrollment.Models.Enrollment>
+
+@{
+    ViewData["Title"] = "Enrollment Data";
+}
+
+<h1>Enrollments</h1>
+
+<p>
+    <a asp-action="Create">Enroll Student</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollmentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
